@@ -18,6 +18,12 @@
     <%= image_tag @book.image %>
   <% end %>
 </p>
+<h2>Review list</h2>
+<% @book.book_review.each do |book_review| %>
+<%= book_review.user.name %>
+<%= book_review.review %>
+<% end %>
+
 
 <h2>Review from</h2>
 <%= form_with(model: @book_review, local: true) do |form| %>
